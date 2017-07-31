@@ -1,0 +1,22 @@
+<h1>New Appointment</h1>
+
+<form #f ='ngForm' (submit)="addAppointment(appointment)">
+  <p><label>Date: </label>
+  <input type="date" [(ngModel)]="appointment.date" name="date"
+  min = 'today'
+  #dateChecker = 'ngModel'
+  required />   </p>
+
+  <p><label>Time:</label>
+  <input type="time" [(ngModel)]="appointment.time" name="time" 
+  min="time_min" max="time_max"
+  required /></p>
+
+  <p><label>Complain:</label>
+  <textarea name="complain" [(ngModel)]="appointment.complain" rows="4" cols="20"
+  miglength = '10'
+  required></textarea></p>
+  
+  <p><a href [routerLink]="['/dashboard']"><button>Cancel</button></a> &nbsp; <input type="submit" value="Add Appointment" [disabled]="f.invalid" ></p>
+  
+</form>

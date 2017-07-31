@@ -1,0 +1,8 @@
+<div>
+  <form (submit) = 'login(user)'>
+    <label>Patient Name : </label>
+    <input type="text" name="name" [(ngModel)]="user.name"/>
+    <input type="submit" value="Login">
+    <p *ngFor = "let error of errors" > {{ error }} </p>
+  </form>
+</div>
